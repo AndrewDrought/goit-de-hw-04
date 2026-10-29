@@ -1,0 +1,7 @@
+__pycache__/
+.venv/
+*.pyc
+nuek-vuh3.csv
+spark-warehouse/
+metastore_db/
+derby.log

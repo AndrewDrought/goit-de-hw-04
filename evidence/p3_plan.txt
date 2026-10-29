@@ -1,0 +1,48 @@
+AdaptiveSparkPlan isFinalPlan=true
++- == Final Plan ==
+   *(1) Filter (count#97L > 2)
+   +- TableCacheQueryStage 0
+      +- InMemoryTableScan [unit_id#18, count#97L], [(count#97L > 2)]
+            +- InMemoryRelation [unit_id#18, count#97L], StorageLevel(disk, memory, deserialized, 1 replicas)
+                  +- AdaptiveSparkPlan isFinalPlan=true
+                  +- == Final Plan ==
+                     *(3) HashAggregate(keys=[unit_id#18], functions=[count(1)], output=[unit_id#18, count#97L])
+                     +- ShuffleQueryStage 1
+                        +- Exchange hashpartitioning(unit_id#18, 2), ENSURE_REQUIREMENTS, [plan_id=86]
+                           +- *(2) HashAggregate(keys=[unit_id#18], functions=[partial_count(1)], output=[unit_id#18, count#101L])
+                              +- ShuffleQueryStage 0
+                                 +- Exchange RoundRobinPartitioning(2), REPARTITION_BY_NUM, [plan_id=59]
+                                    +- *(1) Project [unit_id#18]
+                                       +- *(1) Filter (isnotnull(final_priority#40) AND (final_priority#40 < 3))
+                                          +- FileScan csv [unit_id#18,final_priority#40] Batched: false, DataFilters: [isnotnull(final_priority#40), (final_priority#40 < 3)], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:./nuek-vuh3.csv], PartitionFilters: [], PushedFilters: [IsNotNull(final_priority), LessThan(final_priority,3)], ReadSchema: struct<unit_id:string,final_priority:int>
+                  +- == Initial Plan ==
+                     HashAggregate(keys=[unit_id#18], functions=[count(1)], output=[unit_id#18, count#97L])
+                     +- Exchange hashpartitioning(unit_id#18, 2), ENSURE_REQUIREMENTS, [plan_id=38]
+                        +- HashAggregate(keys=[unit_id#18], functions=[partial_count(1)], output=[unit_id#18, count#101L])
+                           +- Exchange RoundRobinPartitioning(2), REPARTITION_BY_NUM, [plan_id=34]
+                              +- Project [unit_id#18]
+                                 +- Filter (isnotnull(final_priority#40) AND (final_priority#40 < 3))
+                                    +- FileScan csv [unit_id#18,final_priority#40] Batched: false, DataFilters: [isnotnull(final_priority#40), (final_priority#40 < 3)], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:./nuek-vuh3.csv], PartitionFilters: [], PushedFilters: [IsNotNull(final_priority), LessThan(final_priority,3)], ReadSchema: struct<unit_id:string,final_priority:int>
++- == Initial Plan ==
+   Filter (count#97L > 2)
+   +- InMemoryTableScan [unit_id#18, count#97L], [(count#97L > 2)]
+         +- InMemoryRelation [unit_id#18, count#97L], StorageLevel(disk, memory, deserialized, 1 replicas)
+               +- AdaptiveSparkPlan isFinalPlan=true
+               +- == Final Plan ==
+                  *(3) HashAggregate(keys=[unit_id#18], functions=[count(1)], output=[unit_id#18, count#97L])
+                  +- ShuffleQueryStage 1
+                     +- Exchange hashpartitioning(unit_id#18, 2), ENSURE_REQUIREMENTS, [plan_id=86]
+                        +- *(2) HashAggregate(keys=[unit_id#18], functions=[partial_count(1)], output=[unit_id#18, count#101L])
+                           +- ShuffleQueryStage 0
+                              +- Exchange RoundRobinPartitioning(2), REPARTITION_BY_NUM, [plan_id=59]
+                                 +- *(1) Project [unit_id#18]
+                                    +- *(1) Filter (isnotnull(final_priority#40) AND (final_priority#40 < 3))
+                                       +- FileScan csv [unit_id#18,final_priority#40] Batched: false, DataFilters: [isnotnull(final_priority#40), (final_priority#40 < 3)], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:./nuek-vuh3.csv], PartitionFilters: [], PushedFilters: [IsNotNull(final_priority), LessThan(final_priority,3)], ReadSchema: struct<unit_id:string,final_priority:int>
+               +- == Initial Plan ==
+                  HashAggregate(keys=[unit_id#18], functions=[count(1)], output=[unit_id#18, count#97L])
+                  +- Exchange hashpartitioning(unit_id#18, 2), ENSURE_REQUIREMENTS, [plan_id=38]
+                     +- HashAggregate(keys=[unit_id#18], functions=[partial_count(1)], output=[unit_id#18, count#101L])
+                        +- Exchange RoundRobinPartitioning(2), REPARTITION_BY_NUM, [plan_id=34]
+                           +- Project [unit_id#18]
+                              +- Filter (isnotnull(final_priority#40) AND (final_priority#40 < 3))
+                                 +- FileScan csv [unit_id#18,final_priority#40] Batched: false, DataFilters: [isnotnull(final_priority#40), (final_priority#40 < 3)], Format: CSV, Location: InMemoryFileIndex(1 paths)[file:./nuek-vuh3.csv], PartitionFilters: [], PushedFilters: [IsNotNull(final_priority), LessThan(final_priority,3)], ReadSchema: struct<unit_id:string,final_priority:int>

@@ -1,0 +1,208 @@
+[
+  {
+    "part": 1,
+    "spark_version": "3.5.3",
+    "master": "local[*]",
+    "adaptive": "true",
+    "shuffle_partitions": "2",
+    "completed_jobs": 5,
+    "jobs": [
+      {
+        "job_id": 0,
+        "name": "csv at NativeMethodAccessorImpl.java:0",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          0
+        ]
+      },
+      {
+        "job_id": 1,
+        "name": "csv at NativeMethodAccessorImpl.java:0",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          1
+        ]
+      },
+      {
+        "job_id": 2,
+        "name": "collect at part1.py:30",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          2
+        ]
+      },
+      {
+        "job_id": 3,
+        "name": "collect at part1.py:30",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          3,
+          4
+        ]
+      },
+      {
+        "job_id": 4,
+        "name": "collect at part1.py:30",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          5,
+          6,
+          7
+        ]
+      }
+    ]
+  },
+  {
+    "part": 2,
+    "spark_version": "3.5.3",
+    "master": "local[*]",
+    "adaptive": "true",
+    "shuffle_partitions": "2",
+    "completed_jobs": 8,
+    "jobs": [
+      {
+        "job_id": 0,
+        "name": "csv at NativeMethodAccessorImpl.java:0",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          0
+        ]
+      },
+      {
+        "job_id": 1,
+        "name": "csv at NativeMethodAccessorImpl.java:0",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          1
+        ]
+      },
+      {
+        "job_id": 2,
+        "name": "collect at part2.py:30",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          2
+        ]
+      },
+      {
+        "job_id": 3,
+        "name": "collect at part2.py:30",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          3,
+          4
+        ]
+      },
+      {
+        "job_id": 4,
+        "name": "collect at part2.py:30",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "job_id": 5,
+        "name": "collect at part2.py:33",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          8
+        ]
+      },
+      {
+        "job_id": 6,
+        "name": "collect at part2.py:33",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          9,
+          10
+        ]
+      },
+      {
+        "job_id": 7,
+        "name": "collect at part2.py:33",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          12,
+          13,
+          11
+        ]
+      }
+    ]
+  },
+  {
+    "part": 3,
+    "spark_version": "3.5.3",
+    "master": "local[*]",
+    "adaptive": "true",
+    "shuffle_partitions": "2",
+    "completed_jobs": 7,
+    "jobs": [
+      {
+        "job_id": 0,
+        "name": "csv at NativeMethodAccessorImpl.java:0",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          0
+        ]
+      },
+      {
+        "job_id": 1,
+        "name": "csv at NativeMethodAccessorImpl.java:0",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          1
+        ]
+      },
+      {
+        "job_id": 2,
+        "name": "collect at part3.py:31",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          2
+        ]
+      },
+      {
+        "job_id": 3,
+        "name": "collect at part3.py:31",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          3,
+          4
+        ]
+      },
+      {
+        "job_id": 4,
+        "name": "collect at part3.py:31",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          5,
+          6,
+          7
+        ]
+      },
+      {
+        "job_id": 5,
+        "name": "collect at part3.py:31",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          9,
+          10,
+          8
+        ]
+      },
+      {
+        "job_id": 6,
+        "name": "collect at part3.py:34",
+        "status": "SUCCEEDED",
+        "stage_ids": [
+          12,
+          13,
+          11
+        ]
+      }
+    ]
+  }
+]
